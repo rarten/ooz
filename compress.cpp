@@ -181,7 +181,6 @@ int CompressQuantum(LzCoder *coder, LzTemp *lztemp, MatchLenStorage *mls,
       if (AreAllBytesEqual(src, round_bytes)) {
         float memset_cost = kInvalidCost;
         int n = EncodeArrayU8_Memset(dst, dst_end, src, round_bytes, coder->entropy_opts, coder->speed_tradeoff, coder->platforms, &memset_cost);
-        src += round_bytes;
         dst += n;
         total_cost += memset_cost;
       } else {
